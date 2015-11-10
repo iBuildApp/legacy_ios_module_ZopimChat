@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE107FCA1B56401A00B9C264 /* mZopimchatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE107FC91B56401A00B9C264 /* mZopimchatVC.m */; };
+		CE107FD41B56410200B9C264 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE107FCC1B56410200B9C264 /* Localizable.strings */; };
+		CE107FD51B56410200B9C264 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE107FCE1B56410200B9C264 /* InfoPlist.strings */; };
+		CE107FD61B56410200B9C264 /* mZopimchatResources-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE107FD11B56410200B9C264 /* mZopimchatResources-Info.plist */; };
+		CE107FE31B56513C00B9C264 /* mZopimchatDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = CE107FE01B56513C00B9C264 /* mZopimchatDesign.m */; };
+		CE107FE41B56513C00B9C264 /* mZopimchatParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = CE107FE21B56513C00B9C264 /* mZopimchatParameters.m */; };
+		CE8B7E7A1B59409200619DC2 /* mZopimchatStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B7E791B59409200619DC2 /* mZopimchatStyle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59E93C15192F410600430F4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59559E001670D39000BE9937 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59E93C03192F40F600430F4B;
+			remoteInfo = mZopimchatResources;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		59559E071670D39100BE9937 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		59559E091670D39100BE9937 /* libmZopimchat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmZopimchat.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		59E93C04192F40F600430F4B /* mZopimchatResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mZopimchatResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE107FC71B563FFF00B9C264 /* mZopimchat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "mZopimchat-Prefix.pch"; path = "mZopimchat/mZopimchat-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		CE107FC81B56401A00B9C264 /* mZopimchatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mZopimchatVC.h; path = mZopimchat/mZopimchatVC.h; sourceTree = SOURCE_ROOT; };
+		CE107FC91B56401A00B9C264 /* mZopimchatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mZopimchatVC.m; path = mZopimchat/mZopimchatVC.m; sourceTree = SOURCE_ROOT; };
+		CE107FCD1B56410200B9C264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE107FCF1B56410200B9C264 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE107FD01B56410200B9C264 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE107FD11B56410200B9C264 /* mZopimchatResources-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mZopimchatResources-Info.plist"; sourceTree = "<group>"; };
+		CE107FD21B56410200B9C264 /* mZopimchatResources-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mZopimchatResources-Prefix.pch"; sourceTree = "<group>"; };
+		CE107FD31B56410200B9C264 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE107FDF1B56513C00B9C264 /* mZopimchatDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mZopimchatDesign.h; sourceTree = "<group>"; };
+		CE107FE01B56513C00B9C264 /* mZopimchatDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mZopimchatDesign.m; sourceTree = "<group>"; };
+		CE107FE11B56513C00B9C264 /* mZopimchatParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mZopimchatParameters.h; sourceTree = "<group>"; };
+		CE107FE21B56513C00B9C264 /* mZopimchatParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mZopimchatParameters.m; sourceTree = "<group>"; };
+		CE8B7E781B59409200619DC2 /* mZopimchatStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mZopimchatStyle.h; sourceTree = "<group>"; };
+		CE8B7E791B59409200619DC2 /* mZopimchatStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mZopimchatStyle.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59559E061670D39100BE9937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59E93C01192F40F600430F4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59559DFE1670D39000BE9937 = {
+			isa = PBXGroup;
+			children = (
+				59559E0E1670D39100BE9937 /* mZopimchat */,
+				CE107FCB1B56410200B9C264 /* mZopimchatResources */,
+				59559E0A1670D39100BE9937 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59559E0A1670D39100BE9937 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59559E091670D39100BE9937 /* libmZopimchat.a */,
+				59E93C04192F40F600430F4B /* mZopimchatResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59559E0E1670D39100BE9937 /* mZopimchat */ = {
+			isa = PBXGroup;
+			children = (
+				CE107FDF1B56513C00B9C264 /* mZopimchatDesign.h */,
+				CE107FE01B56513C00B9C264 /* mZopimchatDesign.m */,
+				CE107FE11B56513C00B9C264 /* mZopimchatParameters.h */,
+				CE107FE21B56513C00B9C264 /* mZopimchatParameters.m */,
+				CE107FC81B56401A00B9C264 /* mZopimchatVC.h */,
+				CE107FC91B56401A00B9C264 /* mZopimchatVC.m */,
+				CE8B7E781B59409200619DC2 /* mZopimchatStyle.h */,
+				CE8B7E791B59409200619DC2 /* mZopimchatStyle.m */,
+				59559E0F1670D39100BE9937 /* Supporting Files */,
+			);
+			path = mZopimchat;
+			sourceTree = "<group>";
+		};
+		59559E0F1670D39100BE9937 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE107FC71B563FFF00B9C264 /* mZopimchat-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE107FCB1B56410200B9C264 /* mZopimchatResources */ = {
+			isa = PBXGroup;
+			children = (
+				CE107FCC1B56410200B9C264 /* Localizable.strings */,
+				CE107FCE1B56410200B9C264 /* InfoPlist.strings */,
+				CE107FD11B56410200B9C264 /* mZopimchatResources-Info.plist */,
+				CE107FD21B56410200B9C264 /* mZopimchatResources-Prefix.pch */,
+			);
+			path = mZopimchatResources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59559E081670D39100BE9937 /* mZopimchat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59559E171670D39100BE9937 /* Build configuration list for PBXNativeTarget "mZopimchat" */;
+			buildPhases = (
+				59559E051670D39100BE9937 /* Sources */,
+				59559E061670D39100BE9937 /* Frameworks */,
+				59559E071670D39100BE9937 /* CopyFiles */,
+				59559E241670D49E00BE9937 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59E93C16192F410600430F4B /* PBXTargetDependency */,
+			);
+			name = mZopimchat;
+			productName = mZopimchat;
+			productReference = 59559E091670D39100BE9937 /* libmZopimchat.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		59E93C03192F40F600430F4B /* mZopimchatResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59E93C14192F40F600430F4B /* Build configuration list for PBXNativeTarget "mZopimchatResources" */;
+			buildPhases = (
+				59E93C00192F40F600430F4B /* Sources */,
+				59E93C01192F40F600430F4B /* Frameworks */,
+				59E93C02192F40F600430F4B /* Resources */,
+				59E93C46192F43AF00430F4B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mZopimchatResources;
+			productName = mZopimchatResources;
+			productReference = 59E93C04192F40F600430F4B /* mZopimchatResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59559E001670D39000BE9937 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = iBuildApp;
+			};
+			buildConfigurationList = 59559E031670D39000BE9937 /* Build configuration list for PBXProject "mZopimchat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+				Base,
+			);
+			mainGroup = 59559DFE1670D39000BE9937;
+			productRefGroup = 59559E0A1670D39100BE9937 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59559E081670D39100BE9937 /* mZopimchat */,
+				59E93C03192F40F600430F4B /* mZopimchatResources */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59E93C02192F40F600430F4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE107FD61B56410200B9C264 /* mZopimchatResources-Info.plist in Resources */,
+				CE107FD41B56410200B9C264 /* Localizable.strings in Resources */,
+				CE107FD51B56410200B9C264 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59559E241670D49E00BE9937 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "cp -fR \"$CODESIGNING_FOLDER_PATH\" `echo $PROJECT_DIR | sed 's/appbuilder/appbuilder_server/g'`";
+		};
+		59E93C46192F43AF00430F4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "cp -fR \"$CODESIGNING_FOLDER_PATH\" `echo $PROJECT_DIR | sed 's/appbuilder/appbuilder_server/g'`";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59559E051670D39100BE9937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE107FCA1B56401A00B9C264 /* mZopimchatVC.m in Sources */,
+				CE8B7E7A1B59409200619DC2 /* mZopimchatStyle.m in Sources */,
+				CE107FE41B56513C00B9C264 /* mZopimchatParameters.m in Sources */,
+				CE107FE31B56513C00B9C264 /* mZopimchatDesign.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59E93C00192F40F600430F4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59E93C16192F410600430F4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59E93C03192F40F600430F4B /* mZopimchatResources */;
+			targetProxy = 59E93C15192F410600430F4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE107FCC1B56410200B9C264 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE107FCD1B56410200B9C264 /* Base */,
+				CE107FD01B56410200B9C264 /* en */,
+				CE107FD31B56410200B9C264 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CE107FCE1B56410200B9C264 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE107FCF1B56410200B9C264 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59559E151670D39100BE9937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-fobjc";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Debug;
+		};
+		59559E161670D39100BE9937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-fobjc";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Release;
+		};
+		59559E181670D39100BE9937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/mZopimchat.dst;
+				FRAMEWORK_SEARCH_PATHS = ../../libs/;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mZopimchat/mZopimchat-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode_5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../Classes/layout/,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../../Classes/network ../../Classes ../../libs/tbxml/tbxml-headers/ ../../Classes/common ../../Classes/customcontrols ../../Classes/customcontrols/iphone";
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Debug;
+		};
+		59559E191670D39100BE9937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/mZopimchat.dst;
+				FRAMEWORK_SEARCH_PATHS = ../../libs/;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mZopimchat/mZopimchat-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode_5.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../Classes/layout/,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "../../Classes/network ../../Classes ../../libs/tbxml/tbxml-headers/ ../../Classes/common ../../Classes/customcontrols ../../Classes/customcontrols/iphone";
+				VALID_ARCHS = "armv7 arm64";
+			};
+			name = Release;
+		};
+		59E93C12192F40F600430F4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mZopimchatResources/mZopimchatResources-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "mZopimchatResources/mZopimchatResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		59E93C13192F40F600430F4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mZopimchatResources/mZopimchatResources-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "mZopimchatResources/mZopimchatResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59559E031670D39000BE9937 /* Build configuration list for PBXProject "mZopimchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59559E151670D39100BE9937 /* Debug */,
+				59559E161670D39100BE9937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59559E171670D39100BE9937 /* Build configuration list for PBXNativeTarget "mZopimchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59559E181670D39100BE9937 /* Debug */,
+				59559E191670D39100BE9937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59E93C14192F40F600430F4B /* Build configuration list for PBXNativeTarget "mZopimchatResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59E93C12192F40F600430F4B /* Debug */,
+				59E93C13192F40F600430F4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59559E001670D39000BE9937 /* Project object */;
+}
