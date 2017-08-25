@@ -13,20 +13,10 @@ static mZopimchatParameters *sharedParameters = nil;
   return sharedParameters;
 }
 
--(void)dealloc
-{
-  self.mainPageTitle = nil;
-  self.moduleId = nil;
-  self.zopimKey = nil;
-  
-  self.design = nil;
-  
-  [super dealloc];
-}
 
 +(instancetype)parametersFromXMLElement:(TBXMLElement)element
 {
-  mZopimchatParameters *parameters = [[mZopimchatParameters new] autorelease];
+  mZopimchatParameters *parameters = [mZopimchatParameters new];
   
   TBXMLElement *moduleIdElement = [TBXML childElementNamed:@"module_id" parentElement:&element];
   if ( moduleIdElement )

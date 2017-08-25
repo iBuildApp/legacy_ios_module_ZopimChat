@@ -4,18 +4,25 @@
 #import "iphnavbardata.h"
 #import "UIColor+RGB.h"
 #import "UIColor+HSL.h"
+#import "NSString+colorizer.h"
 
 #import <ZDCChat/ZDCChat.h>
 #import "mZopimchatStyle.h"
+
+#import "iphColorskinModel.h"
+#import "iphNavBarCustomization.h"
 
 
 @interface mZopimchatViewController()
 {
   CGFloat _currentYOrigin;
+  BOOL _chatStarted;
 }
 
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UIButton    *backButtonCoverButton;
+
+@property (nonatomic, strong) iphColorskinModel *colorSkin;
 
 @end
 
@@ -29,6 +36,36 @@
   
   mZopimchatParameters *parameters = [mZopimchatParameters parametersFromXMLElement:element];
   parameters.mainPageTitle = [params_ objectForKey:@"title"];
+  
+  // processing tag <colorskin>
+  NSMutableDictionary *colorSkin = [[NSMutableDictionary alloc] init];
+  TBXMLElement *colorskinElement = [TBXML childElementNamed:@"colorskin" parentElement:&element];
+  if (colorskinElement)
+  {
+    // <color1>
+    // <color2>
+    // <color3>
+    // <color4>
+    // <color5>
+    // <color6>
+    // <color7>
+    // <color8>
+    // <isLight>
+    TBXMLElement *colorElement = colorskinElement->firstChild;
+    while(colorElement)
+    {
+      NSString *colorElementContent = [TBXML textForElement:colorElement];
+      
+      if ([colorElementContent length])
+        [colorSkin setValue:colorElementContent forKey:[TBXML elementName:colorElement]];
+      
+      colorElement = colorElement->nextSibling;
+    }
+  }
+  
+  if(colorSkin.count)
+    [params_ setObject:colorSkin forKey:@"colorskin"];
+  
   [params_ setObject:parameters forKey:@"mZopimchatParameters"];
 }
 
@@ -38,6 +75,54 @@
   {
     mZopimchatParameters *parameters_ = [params objectForKey:@"mZopimchatParameters"];
     [[mZopimchatParameters sharedInstance] fillWithParameters:parameters_];
+    
+    // set values for ColorskinModel
+    NSDictionary *colorskinDict = [params objectForKey:@"colorskin"];
+    
+    _colorSkin = [[iphColorskinModel alloc] init];
+    
+    NSString *isLightValue = [colorskinDict objectForKey:@"isLight"];
+    if(isLightValue && [isLightValue length])
+      _colorSkin.isLight = [isLightValue boolValue];
+    
+    NSString *color1Value = [colorskinDict objectForKey:@"color1"];
+    if(color1Value && [color1Value length])
+      _colorSkin.color1 = [color1Value asColor];
+    
+    if([[color1Value uppercaseString]  isEqualToString:@"#FFFFFF"])
+      _colorSkin.color1IsWhite = YES;
+    
+    if([[color1Value uppercaseString]  isEqualToString:@"#000000"])
+      _colorSkin.color1IsBlack = YES;
+    
+    NSString *color2Value = [colorskinDict objectForKey:@"color2"];
+    if(color2Value && [color2Value length])
+      _colorSkin.color2 = [color2Value asColor];
+    
+    NSString *color3Value = [colorskinDict objectForKey:@"color3"];
+    if(color3Value && [color3Value length])
+      _colorSkin.color3 = [color3Value asColor];
+    
+    NSString *color4Value = [colorskinDict objectForKey:@"color4"];
+    if(color4Value && [color4Value length])
+      _colorSkin.color4 = [color4Value asColor];
+    
+    NSString *color5Value = [colorskinDict objectForKey:@"color5"];
+    if(color5Value && [color5Value length])
+      _colorSkin.color5 = [color5Value asColor];
+    
+    NSString *color6Value = [colorskinDict objectForKey:@"color6"];
+    if(color6Value && [color6Value length])
+      _colorSkin.color6 = [color6Value asColor];
+    
+    NSString *color7Value = [colorskinDict objectForKey:@"color7"];
+    if(color7Value && [color7Value length])
+      _colorSkin.color7 = [color7Value asColor];
+    
+    NSString *color8Value = [colorskinDict objectForKey:@"color8"];
+    if(color8Value && [color8Value length])
+      _colorSkin.color8 = [color8Value asColor];
+    
   }
 }
 
@@ -46,26 +131,22 @@
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if ( self )
   {
-    
   }
   return self;
 }
 
 - (void)dealloc
 {
-  self.nameTextField = nil;
-  
   [self.backButtonCoverButton removeFromSuperview];
-  self.backButtonCoverButton = nil;
-  
-  [super dealloc];
 }
 
 -(void)viewDidLoad
 {
   [super viewDidLoad];
   
-  UITapGestureRecognizer *tapBackground = [[[UITapGestureRecognizer alloc] init] autorelease];
+  [iphNavBarCustomization setNavBarSettingsWhenViewDidLoadWithController:self];
+  
+  UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] init];
   [tapBackground addTarget:self action:@selector(dismissKeyboard)];
   [tapBackground setNumberOfTapsRequired:1];
   [self.view addGestureRecognizer:tapBackground];
@@ -75,18 +156,13 @@
   
   [self setupInterface];
   
-  self.backButtonCoverButton = [[[UIButton alloc] init] autorelease];
+  self.backButtonCoverButton = [[UIButton alloc] init];
   self.backButtonCoverButton.frame = CGRectMake(0, 0, 80, CGRectGetHeight(self.navigationController.navigationBar.frame));
   self.backButtonCoverButton.alpha = 1.0f;
   [self.backButtonCoverButton addTarget:self action:@selector(backButtonCoverButtonTapped) forControlEvents:UIControlEventTouchUpInside];
   
   [self.navigationController.navigationBar addSubview:self.backButtonCoverButton];
-  
-  [ZDCChat configure:^(ZDCConfig *defaults)
-   {
-     defaults.accountKey = [mZopimchatParameters sharedInstance].zopimKey;
-   }];
-  
+  [ZDCChat initializeWithAccountKey:[mZopimchatParameters sharedInstance].zopimKey];
   [mZopimchatStyle applyStyling];
 }
 
@@ -111,26 +187,17 @@
 {
   [super viewWillAppear:animated];
   
-  // before hiding / displaying tabBar we must remember its previous state
-  //self.tabBarIsHidden = [[self.tabBarController tabBar] isHidden];
-  [[self.tabBarController tabBar] setHidden:YES];
-
+  [iphNavBarCustomization customizeNavBarWithController:self colorskinModel:_colorSkin];
   
   self.backButtonCoverButton.enabled = NO;
   
-  [self.navigationController setNavigationBarHidden:NO];
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(customizeNavBarAppearanceCompleted:)
-                                               name:TIPhoneNavBarDataCustomizeNavBarAppearanceCompleted
-                                             object:nil];
+  _chatStarted = NO;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-  [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                  name:TIPhoneNavBarDataCustomizeNavBarAppearanceCompleted
-                                                object:nil];
+  if(_chatStarted == NO)
+    [iphNavBarCustomization restoreNavBarWithController:self colorskinModel:_colorSkin];
 
   [super  viewWillDisappear:animated];
 }
@@ -148,7 +215,7 @@
 -(void)placeHelloMessageLabel
 {
   CGRect frame = CGRectMake(0, _currentYOrigin, CGRectGetWidth(self.view.frame), 30);
-  UILabel *helloMessageLabel = [[[UILabel alloc] initWithFrame:frame] autorelease];
+  UILabel *helloMessageLabel = [[UILabel alloc] initWithFrame:frame];
   helloMessageLabel.font = [UIFont systemFontOfSize:25.0f];
   helloMessageLabel.backgroundColor = [UIColor clearColor];
   helloMessageLabel.textColor = [mZopimchatParameters sharedInstance].design.color3;
@@ -163,7 +230,7 @@
 -(void)placeNameLabel
 {
   CGRect frame = CGRectMake(0, _currentYOrigin, CGRectGetWidth(self.view.frame), 15);
-  UILabel *enterNameLabel = [[[UILabel alloc] initWithFrame:frame] autorelease];
+  UILabel *enterNameLabel = [[UILabel alloc] initWithFrame:frame];
   enterNameLabel.font = [UIFont systemFontOfSize:13.0f];
   enterNameLabel.backgroundColor = [UIColor clearColor];
   enterNameLabel.textColor = [mZopimchatParameters sharedInstance].design.color3;
@@ -178,13 +245,13 @@
 -(void)placeNameTextField
 {
   CGRect frame = CGRectMake(0, _currentYOrigin, 270, 40);
-  self.nameTextField = [[[UITextField alloc] initWithFrame:frame] autorelease];
+  self.nameTextField = [[UITextField alloc] initWithFrame:frame];
   CGPoint center = self.nameTextField.center;
   center.x = self.view.center.x;
   self.nameTextField.center = center;
   NSString *placeholderText = NSBundleLocalizedString(@"mZopimchat_namePlaceholder", @"Enter your name");
-  NSAttributedString *placeholder = [[[NSAttributedString alloc] initWithString:placeholderText
-                                                                    attributes:@{ NSForegroundColorAttributeName : [[UIColor blackColor] colorWithAlphaComponent:0.4]}] autorelease];
+  NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:placeholderText
+                                                                    attributes:@{ NSForegroundColorAttributeName : [[UIColor blackColor] colorWithAlphaComponent:0.4]}];
   self.nameTextField.attributedPlaceholder = placeholder;
   self.nameTextField.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.8f];
   self.nameTextField.font = [UIFont systemFontOfSize:18.f];
@@ -207,7 +274,7 @@
 -(void)placeStartChatButton
 {
   CGRect frame = CGRectMake(0, _currentYOrigin, 200, 45);
-  UIButton *startChatButton = [[[UIButton alloc] initWithFrame:frame] autorelease];
+  UIButton *startChatButton = [[UIButton alloc] initWithFrame:frame];
   CGPoint center = startChatButton.center;
   center.x = self.view.center.x;
   startChatButton.center = center;
@@ -228,6 +295,7 @@
 {
   if (self.nameTextField.text.length)
   {
+    _chatStarted = YES;
 
     [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor)
     {
@@ -245,8 +313,8 @@
   else
   {
     NSDictionary *attrs = @{ NSForegroundColorAttributeName : [UIColor redColor] };
-    NSAttributedString *placeholder = [[[NSAttributedString alloc] initWithString:self.nameTextField.placeholder
-                                                                       attributes:attrs] autorelease];
+    NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:self.nameTextField.placeholder
+                                                                       attributes:attrs];
     self.nameTextField.attributedPlaceholder = placeholder;
   }
 }
@@ -254,25 +322,6 @@
 -(void)dismissKeyboard
 {
   [self.nameTextField resignFirstResponder];
-}
-
--(void)customizeNavBarAppearanceCompleted:(NSNotification *)notification
-{
-  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-  
-  UINavigationBar *navBar = self.navigationController.navigationBar;
-  UIColor *backgroundColor = [mZopimchatParameters sharedInstance].design.color1;
-  
-  if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")){
-    if (backgroundColor.isLight)
-      [navBar setBarTintColor:[backgroundColor blend:[[UIColor blackColor] colorWithAlphaComponent:0.2f]]];
-    else
-      [navBar setBarTintColor:[backgroundColor blend:[[UIColor whiteColor] colorWithAlphaComponent:0.4f]]];
-    
-    [navBar setTintColor:[UIColor blackColor]];
-    [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor],
-                                     NSFontAttributeName : [UIFont systemFontOfSize:18.0f]}];
-  }
 }
 
 //-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -297,7 +346,7 @@
   return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
   return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
 }

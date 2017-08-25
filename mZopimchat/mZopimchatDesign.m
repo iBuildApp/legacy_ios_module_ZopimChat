@@ -10,7 +10,7 @@
   TBXMLElement *colorskinElement = [TBXML childElementNamed:@"colorskin" parentElement:&element];
   if (colorskinElement)
   {
-    mZopimchatDesign *design = [[mZopimchatDesign new] autorelease];
+    mZopimchatDesign *design = [mZopimchatDesign new];
     
     NSMutableDictionary *colorSkinDictionary = [NSMutableDictionary new];
     
@@ -80,15 +80,5 @@
 }
 
 
--(void)dealloc
-{
-  self.color1 = nil;
-  self.color2 = nil;
-  self.color3 = nil;
-  self.color4 = nil;
-  self.color5 = nil;
-  
-  [super dealloc];
-}
 
 @end
